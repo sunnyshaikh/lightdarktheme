@@ -1,0 +1,79 @@
+:root {
+  --dark: #101019;
+  --light: #f9f9f9;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.light {
+  background: var(--light);
+}
+
+body.dark {
+  background: var(--dark);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.switch-btn {
+  background: #007bff;
+  padding: .75rem 1.5rem;
+  color: var(--light);
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-family: sans-serif;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: auto;
+}
+
+.switch-btn:active {
+  transform: scale(0.97);
+}
+
+.fa-sun,
+.fa-moon {
+  position: absolute;
+  top: 15%;
+  font-size: 4rem;
+  transition: .5s ease;
+}
+
+.fa-moon {
+  color: var(--light);
+}
+
+.fa-sun {
+  color: #f6b41a;
+}
+
+body.dark .fa-sun {
+  transform: translateY(-100px) rotate(90deg);
+  opacity: 0;
+}
+
+body.light .fa-moon {
+  transform: translateY(100px) rotate(90deg);
+  opacity: 0;
+}
